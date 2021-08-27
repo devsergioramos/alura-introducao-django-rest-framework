@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from escola.models import Student, Course
+from escola.models import Student, Course, Registry
 
 # transforma o model alunos em modelos serializados
 # convert os dados para dados serializados para que o ORM do python possa entender
@@ -12,3 +12,8 @@ class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = '__all__' # traz todos os fields
+
+class RegistrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registry
+        fields = '__all__'
