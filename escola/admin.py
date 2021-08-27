@@ -1,5 +1,5 @@
 from django.contrib import admin
-from escola.models import Student, Course
+from escola.models import Student, Course, Registry
 
 class Students(admin.ModelAdmin):
     list_display = ('id', 'name', 'rg', 'cpf', 'birth_date')
@@ -15,3 +15,9 @@ class Courses(admin.ModelAdmin):
     search_fields = ('cod_course',)
 
 admin.site.register(Course, Courses)
+
+class Registries(admin.ModelAdmin):
+    list_display = ('id', 'student', 'course', 'period')
+    list_display_links = ('id',)
+
+admin.site.register(Registry, Registries)
